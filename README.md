@@ -29,4 +29,4 @@ Cypress gui will open the following. All the tests cases will be found `cypres/e
 
 # Improvements
 
-1. As per design i did not do any responsive works. That would a great thing to improve.
+1. As per design i did not do any responsive works. That would be a great thing to improve.
