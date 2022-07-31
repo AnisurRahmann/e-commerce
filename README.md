@@ -1,53 +1,32 @@
-# Welcome to Remix!
+## Live URL: https://e-commerce-chi-six.vercel.app/
 
-- [Remix Docs](https://remix.run/docs)
+# Run project
 
-## Development
+1. Clone repository from `git clone git@github.com:AnisurRahmann/e-commerce.git`
+2. Run `npm install`
+3. Create a `.env` file & add your postgres database url to `DATABASE_URL` variable.
+4. Run `npx prisma db push` to create a new database instance
+5. Run `npm run prisma:seed` to seed product data
+6. Run `npm run dev` and project will be up and running on `localhost:3000`
 
-From your terminal:
+# Testing
 
-```sh
-npm run dev
-```
+I have written few E2E tests with cypress. You can follow the steps to run the test cases.
 
-This starts your app in development mode, rebuilding assets on file changes.
+1. `npx cypress install`
+2. `npx cypress open`
 
-## Deployment
+Cypress gui will open the following. All the tests cases will be found `cypres/e2e/home.cy.ts`
 
-First, build your app for production:
+# Technologies I have used
 
-```sh
-npm run build
-```
+1. `Remix run` A modern and fantastic framework for ReactJs project.
+2. I did not use any state management library as there is not much reason to use it. I have tried to keep props diffing withing 3 degree level components. Which is not that much mess for this project.
+3. `prisma` A modern `ORM` which i loved so much.
+4. `postgres` for database.
+5. `Cypress` for e2e testing.
+6. `vercel` for deployment.
 
-Then run the app in production mode:
+# Improvements
 
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+1. As per design i did not do any responsive works. That would a great thing to improve.
