@@ -22,7 +22,7 @@ Cypress gui will open the following. All the tests cases will be found `cypres/e
 
 1. `Remix run` A modern and fantastic framework for ReactJs project.
 2. I did not use any state management library as there is not much reason to use it. I have tried to keep props diffing withing 3 degree level components. Which is not that much mess for this project.
-3. `prisma` A modern `ORM` which i loved so much.
+3. `prisma` A modern `ORM` which i love so much.
 4. `postgres` for database.
 5. `Cypress` for e2e testing.
 6. `vercel` for deployment.
