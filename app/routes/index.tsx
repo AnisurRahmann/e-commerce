@@ -23,7 +23,7 @@ export const loader: LoaderFunction = async () => {
 export default function Index() {
   const [showCart, setShowCart] = useState<boolean>(false);
   const [cartData, setCartData] = useState<[]>([]);
-    const [totalAmount, setTotalAmount] = useState<number>(0);
+  const [totalAmount, setTotalAmount] = useState<number>(0);
   const data = useLoaderData<ProductData>();
 
   return (

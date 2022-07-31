@@ -1,4 +1,4 @@
-import CartICon from "./icons/cartIcon";
+import CartICon from "./icons/CartIcon";
 
 export default function MainHeader({
   showCart,

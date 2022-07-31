@@ -1,6 +1,6 @@
 import CartItem from "./CartItem";
-import CartICon from "./icons/cartIcon";
-import CrossIcon from "./icons/crossIcon";
+import CartICon from "./icons/CartIcon";
+import CrossIcon from "./icons/CrossIcon";
 
 export default function Cart({
   showCart,
