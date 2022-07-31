@@ -1,5 +1,15 @@
 import CartICon from "./icons/CartIcon";
 
+type productDataType = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  image_url: string;
+  rating: number;
+  has_discount: boolean;
+};
+
 export default function MainHeader({
   showCart,
   setShowCart,
@@ -7,7 +17,7 @@ export default function MainHeader({
 }: {
   showCart: boolean;
   setShowCart: (arg01: boolean) => void;
-  cartData: [];
+  cartData: productDataType[];
 }) {
   return (
     <header className="header">

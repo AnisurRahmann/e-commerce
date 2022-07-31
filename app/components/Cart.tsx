@@ -2,6 +2,16 @@ import CartItem from "./CartItem";
 import CartICon from "./icons/CartIcon";
 import CrossIcon from "./icons/CrossIcon";
 
+type productDataType = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  image_url: string;
+  rating: number;
+  has_discount: boolean;
+};
+
 export default function Cart({
   showCart,
   setShowCart,
@@ -12,8 +22,8 @@ export default function Cart({
 }: {
   showCart: boolean;
   setShowCart: (arg01: boolean) => void;
-  cartData: [];
-  setCartData: (arg01: {}) => void;
+  cartData: productDataType[];
+  setCartData: (arg01: productDataType[]) => void;
   totalAmount: number;
   setTotalAmount: (arg01: number) => void;
 }) {

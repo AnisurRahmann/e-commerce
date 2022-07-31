@@ -3,6 +3,16 @@ import DecrementIcon from "./icons/DecrementIcon";
 import DeleteIcon from "./icons/DeleteIcon";
 import Increment from "./icons/IncrementIcon";
 
+type productDataType = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  image_url: string;
+  rating: number;
+  has_discount: boolean;
+};
+
 export default function CartItem({
   cartItemData,
   totalAmount,
@@ -10,19 +20,11 @@ export default function CartItem({
   cartData,
   setCartData,
 }: {
-  cartItemData: {
-    id: string;
-    name: string;
-    price: number;
-    category: string;
-    image_url: string;
-    rating: number;
-    has_discount: boolean;
-  };
+  cartItemData: productDataType;
   totalAmount: number;
   setTotalAmount: (arg01: number) => void;
-  cartData: [];
-  setCartData: (arg01: {}) => void;
+  cartData: productDataType[];
+  setCartData: (arg01: productDataType[]) => void;
 }) {
   const [quantity, setQuantity] = useState<number>(1);
 
@@ -30,7 +32,9 @@ export default function CartItem({
     cartItemData;
 
   const handleDelete = () => {
-    const updatedCartData = cartData.filter((item: any) => item.id !== id);
+    const updatedCartData = cartData.filter(
+      (item: productDataType) => item.id !== id
+    );
     setCartData(updatedCartData);
     if (quantity === 1) {
       setTotalAmount(totalAmount - price);

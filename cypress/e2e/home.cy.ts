@@ -31,11 +31,11 @@ describe("Home Page", () => {
     cy.get(".cart-container")
       .find(".cart-item-wrapper")
       .then(() => {
-        cy.get(".cart-action-area > .trash-icon > .button-ghost")
-          .should(($el) => {
+        cy.get(".cart-action-area > .trash-icon > .button-ghost").should(
+          ($el) => {
             expect(Cypress.dom.isDetached($el)).to.eq(false);
-          })
-          
+          }
+        );
       });
   });
 });

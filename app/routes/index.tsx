@@ -22,7 +22,17 @@ export const loader: LoaderFunction = async () => {
 
 export default function Index() {
   const [showCart, setShowCart] = useState<boolean>(false);
-  const [cartData, setCartData] = useState<[]>([]);
+  const [cartData, setCartData] = useState<
+    {
+      id: string;
+      name: string;
+      category: string;
+      price: number;
+      image_url: string;
+      rating: number;
+      has_discount: boolean;
+    }[]
+  >([]);
   const [totalAmount, setTotalAmount] = useState<number>(0);
   const data = useLoaderData<ProductData>();
 

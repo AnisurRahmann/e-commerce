@@ -2,6 +2,16 @@ import { useState } from "react";
 import LikeICon from "./icons/LikeIcon";
 import StarIcon from "./icons/StarIcon";
 
+type productDataType = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  image_url: string;
+  rating: number;
+  has_discount: boolean;
+};
+
 export default function ProductCard({
   id,
   name,
@@ -22,8 +32,8 @@ export default function ProductCard({
   image_url: string;
   rating: number;
   has_discount: boolean;
-  cartData: [];
-  setCartData: (arg01: {}) => void;
+  cartData: productDataType[];
+  setCartData: (arg01: productDataType[]) => void;
   totalAmount: number;
   setTotalAmount: (arg01: number) => void;
 }) {
@@ -31,12 +41,14 @@ export default function ProductCard({
 
   const handleAddToCart = () => {
     // Check if item is already exist in the cart
-    const existItemInCart = cartData.find((item: any) => item.id === id);
+    const existItemInCart = cartData.find(
+      (item: productDataType) => item.id === id
+    );
 
     if (existItemInCart === undefined) {
       setCartData([
         ...cartData,
-        { id, name, price, image_url, rating, has_discount },
+        { id, name, price, image_url, rating, has_discount, category },
       ]);
       setTotalAmount(totalAmount + price);
     }
